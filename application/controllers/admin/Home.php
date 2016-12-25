@@ -10,7 +10,9 @@ include_once "AdminController.php";
 class Home extends AdminController
 {
     public function index(){
-        $this->load->view("admin/home/index");
+        $this->data['title'] = '后台首页';
+        $this->data['breadcrumb'] = '后台首页';
+        $this->load->view("admin/home/index", $this->data);
     }
 
 }
