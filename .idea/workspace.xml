@@ -2,16 +2,102 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b4ca0b8-3c98-486c-a033-0f8cbc241514" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/common/bread-crumbs.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/common/footer-common.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/common/footer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/common/header.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/common/nav-bar.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/common/side-bar.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/images/active.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/images/default.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/images/navbar-mobile1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/images/navbar-mobile2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/images/navbar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/images/new-toggle.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/images/old-toggle.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/images/scroll-content.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/images/sidebar-mobile1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/images/sidebar-mobile2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/images/sidebar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/images/tabbed-dropdown.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/images/tabless-inbox.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/images/toggle-sidebar-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/images/toggle-sidebar-11.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/images/toggle-sidebar-3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/images/user-menu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/admin/Post.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/post/add_post.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/xihua_cms.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/language/css.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/language/generic.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/language/html.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/language/javascript.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/language/php.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/rainbow.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/rainbow.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/themes/all-hallows-eve.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/themes/blackboard.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/themes/dreamweaver.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/themes/espresso-libre.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/themes/github.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/themes/kimbie-dark.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/themes/kimbie-light.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/themes/monokai.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/themes/obsidian.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/themes/paraiso-dark.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/themes/paraiso-light.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/themes/pastie.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/themes/solarized-dark.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/themes/solarized-light.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/themes/sunburst.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/themes/tomorrow-night.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/themes/tricolore.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/themes/twilight.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/assets/js/themes/zenburnesque.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/blank.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/basics/content.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/basics/footer.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/basics/layout.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/basics/navbar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/basics/sidebar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/changes/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/credits/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/custom/checkbox.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/custom/colorpicker.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/custom/extra.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/custom/file-input.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/custom/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/custom/inline-editable.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/custom/scrollbar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/custom/widget-box.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/elements/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/files/css.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/files/examples.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/files/html.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/files/javascript.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/files/mustache.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/intro/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/issues/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/pages/dashboard.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/pages/error.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/pages/faq.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/pages/gallery.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/pages/inbox.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/pages/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/pages/invoice.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/pages/login.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/pages/pricing.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/pages/profile.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/pages/timeline.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/plugins/bootstrap.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/plugins/charts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/plugins/date-time.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/plugins/editor.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/plugins/fuelux.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/plugins/input.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/plugins/jquery.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/plugins/misc.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/plugins/tables.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/plugins/tools.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/docs/sections/settings/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/AdminController.php" afterPath="$PROJECT_DIR$/application/controllers/admin/AdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Home.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/home/index.php" afterPath="$PROJECT_DIR$/application/views/admin/home/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/common/footer.php" afterPath="$PROJECT_DIR$/application/views/admin/common/footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/common/side-bar.php" afterPath="$PROJECT_DIR$/application/views/admin/common/side-bar.php" />
     </list>
     <ignored path="xihua_cms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,57 +119,113 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/admin/AdminController.php">
+      <file leaf-file-name="Post.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/admin/Post.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.8">
-              <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+            <state vertical-scroll-proportion="-13.3">
+              <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Home.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/admin/Home.php">
+      <file leaf-file-name="add_post.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/admin/post/add_post.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32577565">
-              <caret line="13" column="41" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="41" />
+            <state vertical-scroll-proportion="-9.1">
+              <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+              <folding>
+                <element signature="e#3880#3901#0#HTML" expanded="true" />
+                <element signature="e#3982#4006#0#HTML" expanded="true" />
+                <element signature="e#4081#4104#0#HTML" expanded="true" />
+                <element signature="e#4931#4949#0#HTML" expanded="true" />
+                <element signature="e#5024#5041#0#HTML" expanded="true" />
+                <element signature="e#7345#7367#0#HTML" expanded="true" />
+                <element signature="e#10690#10772#0#HTML" expanded="true" />
+                <element signature="e#27786#27808#0#HTML" expanded="true" />
+                <element signature="e#32474#32495#0#HTML" expanded="true" />
+                <element signature="e#34705#34727#0#HTML" expanded="true" />
+                <element signature="e#39311#39332#0#HTML" expanded="true" />
+                <element signature="e#39506#39525#0#HTML" expanded="true" />
+                <element signature="e#53749#53771#0#HTML" expanded="true" />
+                <element signature="e#53832#53865#0#HTML" expanded="true" />
+                <element signature="e#53940#53960#0#HTML" expanded="true" />
+                <element signature="e#54033#54053#0#HTML" expanded="true" />
+                <element signature="e#54472#54518#0#HTML" expanded="true" />
+                <element signature="e#54599#54618#0#HTML" expanded="true" />
+                <element signature="e#54693#54711#0#HTML" expanded="true" />
+                <element signature="e#54903#54949#0#HTML" expanded="true" />
+                <element signature="e#55030#55049#0#HTML" expanded="true" />
+                <element signature="e#55124#55142#0#HTML" expanded="true" />
+                <element signature="e#55433#55479#0#HTML" expanded="true" />
+                <element signature="e#55560#55579#0#HTML" expanded="true" />
+                <element signature="e#55654#55672#0#HTML" expanded="true" />
+                <element signature="e#55884#55930#0#HTML" expanded="true" />
+                <element signature="e#56011#56030#0#HTML" expanded="true" />
+                <element signature="e#56105#56123#0#HTML" expanded="true" />
+                <element signature="e#56333#56379#0#HTML" expanded="true" />
+                <element signature="e#56460#56479#0#HTML" expanded="true" />
+                <element signature="e#56554#56572#0#HTML" expanded="true" />
+                <element signature="e#57585#57606#0#HTML" expanded="true" />
+                <element signature="e#58228#58249#0#HTML" expanded="true" />
+                <element signature="e#58850#58871#0#HTML" expanded="true" />
+                <element signature="e#69826#69858#0#HTML" expanded="true" />
+                <element signature="e#69949#69982#0#HTML" expanded="true" />
+                <element signature="e#70051#70084#0#HTML" expanded="true" />
+                <element signature="e#70153#70186#0#HTML" expanded="true" />
+                <element signature="e#70255#70288#0#HTML" expanded="true" />
+                <element signature="e#70357#70390#0#HTML" expanded="true" />
+                <element signature="e#70468#70501#0#HTML" expanded="true" />
+                <element signature="e#70570#70603#0#HTML" expanded="true" />
+                <element signature="e#70672#70705#0#HTML" expanded="true" />
+                <element signature="e#70774#70807#0#HTML" expanded="true" />
+                <element signature="e#70876#70909#0#HTML" expanded="true" />
+                <element signature="e#70978#71011#0#HTML" expanded="true" />
+                <element signature="e#71080#71113#0#HTML" expanded="true" />
+                <element signature="e#71182#71215#0#HTML" expanded="true" />
+                <element signature="e#71284#71317#0#HTML" expanded="true" />
+                <element signature="e#71386#71419#0#HTML" expanded="true" />
+                <element signature="e#71488#71521#0#HTML" expanded="true" />
+                <element signature="e#71590#71623#0#HTML" expanded="true" />
+                <element signature="e#71692#71725#0#HTML" expanded="true" />
+                <element signature="e#71794#71827#0#HTML" expanded="true" />
+                <element signature="e#71896#71929#0#HTML" expanded="true" />
+                <element signature="e#71998#72031#0#HTML" expanded="true" />
+                <element signature="e#72100#72133#0#HTML" expanded="true" />
+                <element signature="e#72202#72235#0#HTML" expanded="true" />
+                <element signature="e#72304#72337#0#HTML" expanded="true" />
+                <element signature="e#72406#72436#0#HTML" expanded="true" />
+                <element signature="e#73842#73893#0#HTML" expanded="true" />
+                <element signature="e#74085#74460#0#HTML" expanded="true" />
+                <element signature="e#74831#74882#0#HTML" expanded="true" />
+                <element signature="e#75154#75529#0#HTML" expanded="true" />
+                <element signature="e#76116#76169#0#HTML" expanded="true" />
+                <element signature="e#76402#76778#0#HTML" expanded="true" />
+                <element signature="e#84306#84328#0#HTML" expanded="true" />
+                <element signature="e#89206#89227#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="github.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/admin/docs/assets/js/themes/github.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/admin/home/index.php">
+      <file leaf-file-name="footer.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/admin/common/footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.6">
-              <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.62410504">
+              <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
               <folding>
-                <element signature="e#6#90#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer-common.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/admin/common/footer-common.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.9">
-              <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-              <folding>
-                <element signature="e#6#89#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bread-crumbs.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/admin/common/bread-crumbs.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.6">
-              <caret line="18" column="55" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="55" />
-              <folding>
-                <element signature="e#6#89#0#PHP" expanded="true" />
+                <element signature="e#6#94#0#PHP" expanded="true" />
+                <marker date="1482660290223" expanded="true" signature="330:450" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -92,35 +234,10 @@
       <file leaf-file-name="side-bar.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/admin/common/side-bar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.866667">
-              <caret line="82" column="16" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
+            <state vertical-scroll-proportion="-15.633333">
+              <caret line="70" column="43" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
               <folding>
                 <element signature="e#6#96#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/admin/common/header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.6666665">
-              <caret line="17" column="46" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="46" />
-              <folding>
-                <element signature="e#6#94#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/admin/common/footer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.966667">
-              <caret line="256" column="70" selection-start-line="256" selection-start-column="70" selection-end-line="256" selection-end-column="70" />
-              <folding>
-                <element signature="e#6#94#0#PHP" expanded="true" />
-                <marker date="1482646508040" expanded="true" signature="330:450" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -144,14 +261,16 @@
         <option value="$PROJECT_DIR$/application/controllers/admin/Admin.php" />
         <option value="$PROJECT_DIR$/application/controllers/admin/HomeController.php" />
         <option value="$PROJECT_DIR$/application/views/admin/common/header.php" />
-        <option value="$PROJECT_DIR$/application/views/admin/common/footer.php" />
         <option value="$PROJECT_DIR$/application/views/admin/common/nav-bar.php" />
-        <option value="$PROJECT_DIR$/application/views/admin/common/side-bar.php" />
         <option value="$PROJECT_DIR$/application/views/admin/common/footer-common.php" />
         <option value="$PROJECT_DIR$/application/views/admin/home/index.php" />
         <option value="$PROJECT_DIR$/application/views/admin/common/bread-crumbs.php" />
         <option value="$PROJECT_DIR$/application/controllers/admin/AdminController.php" />
         <option value="$PROJECT_DIR$/application/controllers/admin/Home.php" />
+        <option value="$PROJECT_DIR$/application/controllers/admin/Post.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/common/side-bar.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/post/add_post.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/common/footer.php" />
       </list>
     </option>
   </component>
@@ -330,6 +449,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xihua_cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xihua_cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -343,11 +484,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xihua_work\xihua_cms\static\admin\template" />
       <recent name="D:\xihua_work\xihua_cms\static\admin" />
+      <recent name="D:\xihua_work\xihua_cms\application\views\admin\post" />
+      <recent name="D:\xihua_work\xihua_cms\application\controllers\admin" />
+      <recent name="D:\xihua_work\xihua_cms\static\admin\template" />
       <recent name="D:\xihua_work\xihua_cms\application\models" />
-      <recent name="D:\xihua_work\xihua_cms\application\controllers" />
-      <recent name="D:\xihua_work\xihua_cms\application\config" />
     </key>
   </component>
   <component name="RunManager">
@@ -401,7 +542,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25266525" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25266525" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -588,17 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/common/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.966667">
-          <caret line="256" column="70" selection-start-line="256" selection-start-column="70" selection-end-line="256" selection-end-column="70" />
-          <folding>
-            <element signature="e#6#94#0#PHP" expanded="true" />
-            <marker date="1482646508040" expanded="true" signature="330:450" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/common/nav-bar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.3">
@@ -628,12 +758,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/home/index.php">
+    <entry file="file://$PROJECT_DIR$/application/views/admin/common/bread-crumbs.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.6">
-          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+        <state vertical-scroll-proportion="-12.6">
+          <caret line="18" column="55" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="55" />
           <folding>
-            <element signature="e#6#90#0#PHP" expanded="true" />
+            <element signature="e#6#89#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -648,22 +778,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/common/bread-crumbs.php">
+    <entry file="file://$PROJECT_DIR$/application/views/admin/home/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.6">
-          <caret line="18" column="55" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="55" />
+        <state vertical-scroll-proportion="-26.6">
+          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
           <folding>
-            <element signature="e#6#89#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/common/side-bar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.866667">
-          <caret line="82" column="16" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
-          <folding>
-            <element signature="e#6#96#0#PHP" expanded="true" />
+            <element signature="e#6#90#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -678,9 +798,123 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/admin/Home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32577565">
-          <caret line="13" column="41" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="41" />
+        <state vertical-scroll-proportion="-9.1">
+          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/admin/Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.3">
+          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/common/side-bar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.633333">
+          <caret line="70" column="43" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
+          <folding>
+            <element signature="e#6#96#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/post/add_post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.1">
+          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+          <folding>
+            <element signature="e#3880#3901#0#HTML" expanded="true" />
+            <element signature="e#3982#4006#0#HTML" expanded="true" />
+            <element signature="e#4081#4104#0#HTML" expanded="true" />
+            <element signature="e#4931#4949#0#HTML" expanded="true" />
+            <element signature="e#5024#5041#0#HTML" expanded="true" />
+            <element signature="e#7345#7367#0#HTML" expanded="true" />
+            <element signature="e#10690#10772#0#HTML" expanded="true" />
+            <element signature="e#27786#27808#0#HTML" expanded="true" />
+            <element signature="e#32474#32495#0#HTML" expanded="true" />
+            <element signature="e#34705#34727#0#HTML" expanded="true" />
+            <element signature="e#39311#39332#0#HTML" expanded="true" />
+            <element signature="e#39506#39525#0#HTML" expanded="true" />
+            <element signature="e#53749#53771#0#HTML" expanded="true" />
+            <element signature="e#53832#53865#0#HTML" expanded="true" />
+            <element signature="e#53940#53960#0#HTML" expanded="true" />
+            <element signature="e#54033#54053#0#HTML" expanded="true" />
+            <element signature="e#54472#54518#0#HTML" expanded="true" />
+            <element signature="e#54599#54618#0#HTML" expanded="true" />
+            <element signature="e#54693#54711#0#HTML" expanded="true" />
+            <element signature="e#54903#54949#0#HTML" expanded="true" />
+            <element signature="e#55030#55049#0#HTML" expanded="true" />
+            <element signature="e#55124#55142#0#HTML" expanded="true" />
+            <element signature="e#55433#55479#0#HTML" expanded="true" />
+            <element signature="e#55560#55579#0#HTML" expanded="true" />
+            <element signature="e#55654#55672#0#HTML" expanded="true" />
+            <element signature="e#55884#55930#0#HTML" expanded="true" />
+            <element signature="e#56011#56030#0#HTML" expanded="true" />
+            <element signature="e#56105#56123#0#HTML" expanded="true" />
+            <element signature="e#56333#56379#0#HTML" expanded="true" />
+            <element signature="e#56460#56479#0#HTML" expanded="true" />
+            <element signature="e#56554#56572#0#HTML" expanded="true" />
+            <element signature="e#57585#57606#0#HTML" expanded="true" />
+            <element signature="e#58228#58249#0#HTML" expanded="true" />
+            <element signature="e#58850#58871#0#HTML" expanded="true" />
+            <element signature="e#69826#69858#0#HTML" expanded="true" />
+            <element signature="e#69949#69982#0#HTML" expanded="true" />
+            <element signature="e#70051#70084#0#HTML" expanded="true" />
+            <element signature="e#70153#70186#0#HTML" expanded="true" />
+            <element signature="e#70255#70288#0#HTML" expanded="true" />
+            <element signature="e#70357#70390#0#HTML" expanded="true" />
+            <element signature="e#70468#70501#0#HTML" expanded="true" />
+            <element signature="e#70570#70603#0#HTML" expanded="true" />
+            <element signature="e#70672#70705#0#HTML" expanded="true" />
+            <element signature="e#70774#70807#0#HTML" expanded="true" />
+            <element signature="e#70876#70909#0#HTML" expanded="true" />
+            <element signature="e#70978#71011#0#HTML" expanded="true" />
+            <element signature="e#71080#71113#0#HTML" expanded="true" />
+            <element signature="e#71182#71215#0#HTML" expanded="true" />
+            <element signature="e#71284#71317#0#HTML" expanded="true" />
+            <element signature="e#71386#71419#0#HTML" expanded="true" />
+            <element signature="e#71488#71521#0#HTML" expanded="true" />
+            <element signature="e#71590#71623#0#HTML" expanded="true" />
+            <element signature="e#71692#71725#0#HTML" expanded="true" />
+            <element signature="e#71794#71827#0#HTML" expanded="true" />
+            <element signature="e#71896#71929#0#HTML" expanded="true" />
+            <element signature="e#71998#72031#0#HTML" expanded="true" />
+            <element signature="e#72100#72133#0#HTML" expanded="true" />
+            <element signature="e#72202#72235#0#HTML" expanded="true" />
+            <element signature="e#72304#72337#0#HTML" expanded="true" />
+            <element signature="e#72406#72436#0#HTML" expanded="true" />
+            <element signature="e#73842#73893#0#HTML" expanded="true" />
+            <element signature="e#74085#74460#0#HTML" expanded="true" />
+            <element signature="e#74831#74882#0#HTML" expanded="true" />
+            <element signature="e#75154#75529#0#HTML" expanded="true" />
+            <element signature="e#76116#76169#0#HTML" expanded="true" />
+            <element signature="e#76402#76778#0#HTML" expanded="true" />
+            <element signature="e#84306#84328#0#HTML" expanded="true" />
+            <element signature="e#89206#89227#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/admin/docs/assets/js/themes/github.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/common/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62410504">
+          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+          <folding>
+            <element signature="e#6#94#0#PHP" expanded="true" />
+            <marker date="1482660290223" expanded="true" signature="330:450" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

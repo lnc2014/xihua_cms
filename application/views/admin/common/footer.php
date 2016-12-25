@@ -37,6 +37,20 @@
 <script src="/static/admin/assets/js/flot/jquery.flot.pie.min.js"></script>
 <script src="/static/admin/assets/js/flot/jquery.flot.resize.min.js"></script>
 
+
+<script src="/static/admin/assets/js/chosen.jquery.min.js"></script>
+<script src="/static/admin/assets/js/fuelux/fuelux.spinner.min.js"></script>
+<script src="/static/admin/assets/js/date-time/bootstrap-datepicker.min.js"></script>
+<script src="/static/admin/assets/js/date-time/bootstrap-timepicker.min.js"></script>
+<script src="/static/admin/assets/js/date-time/moment.min.js"></script>
+<script src="/static/admin/assets/js/date-time/daterangepicker.min.js"></script>
+<script src="/static/admin/assets/js/date-time/bootstrap-datetimepicker.min.js"></script>
+<script src="/static/admin/assets/js/bootstrap-colorpicker.min.js"></script>
+<script src="/static/admin/assets/js/jquery.knob.min.js"></script>
+<script src="/static/admin/assets/js/jquery.autosize.min.js"></script>
+<script src="/static/admin/assets/js/jquery.inputlimiter.1.3.1.min.js"></script>
+<script src="/static/admin/assets/js/jquery.maskedinput.min.js"></script>
+<script src="/static/admin/assets/js/bootstrap-tag.min.js"></script>
 <!-- ace scripts -->
 <script src="/static/admin/assets/js/ace-elements.min.js"></script>
 <script src="/static/admin/assets/js/ace.min.js"></script>
@@ -255,6 +269,14 @@
 </script>
 <link rel="stylesheet" href="/static/admin/assets/css/ace.onpage-help.css" />
 <script src="/static/admin/assets/js/ace/ace.onpage-help.js"></script>
+<link rel="stylesheet" href="/static/admin/docs/assets/js/themes/sunburst.css" />
+
+<script src="/static/admin/assets/js/ace/ace.onpage-help.js"></script>
+<script src="/static/admin/docs/assets/js/rainbow.js"></script>
+<script src="/static/admin/docs/assets/js/language/generic.js"></script>
+<script src="/static/admin/docs/assets/js/language/html.js"></script>
+<script src="/static/admin/docs/assets/js/language/css.js"></script>
+<script src="/static/admin/docs/assets/js/language/javascript.js"></script>
 </body>
 </html>
 

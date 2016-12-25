@@ -44,7 +44,8 @@
     </div><!-- /.sidebar-shortcuts -->
 
     <ul class="nav nav-list">
-        <li class="active">
+        <li <?php
+        if($active == 'home'){ echo 'class="active"'; } ?>>
             <a href="/index.php/admin/home/index">
                 <i class="menu-icon fa fa-tachometer"></i>
                 <span class="menu-text">后台首页</span>
@@ -52,7 +53,7 @@
             <b class="arrow"></b>
         </li>
 
-        <li class="">
+        <li <?php if($active == 'post'){ echo 'class="active"'; } ?>>
             <a href="/index.php/admin/post/index" class="dropdown-toggle">
                 <i class="menu-icon fa fa-pencil-square-o"></i>
                 <span class="menu-text">内容管理</span>
@@ -60,15 +61,15 @@
             </a>
             <b class="arrow"></b>
             <ul class="submenu">
-                <li class="">
-                    <a href="">
+                <li <?php if($active_second == 'post_list'){ echo 'class="active"'; } ?>>
+                    <a href="/index.php/admin/post/post_list">
                         <i class="menu-icon fa fa-caret-right"></i>
                         文章列表
                     </a>
                     <b class="arrow"></b>
                 </li>
-                <li class="">
-                    <a href="">
+                <li <?php if($active_second == 'add_post'){ echo 'class="active"'; } ?>>
+                    <a href="/index.php/admin/post/add_post">
                         <i class="menu-icon fa fa-caret-right"></i>
                         新增文章
                     </a>
