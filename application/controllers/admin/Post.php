@@ -9,6 +9,14 @@
 include_once "AdminController.php";
 class Post extends AdminController
 {
+    public function __construct()
+    {
+        parent::__construct();
+        //检验是不是登录
+        if(!$this->check_login()){
+            redirect('admin/home/login');
+        }
+    }
     public function index(){
         $this->data['title'] = '后台文章管理首页';
         $this->data['breadcrumb'] = '后台文章管理首页';

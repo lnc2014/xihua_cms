@@ -4,87 +4,62 @@
  */
 class Base_model extends CI_Model
 {
-    //protected $_tablename;
-    
+
+
     public function __construct()
     {
-        //如果没有设置表名，提示设置表名
-        if(!isset($this->_tablename))
-            throw new Exception ('please setup $_tablename property with this model first');
-        
         parent::__construct();
+        $this->load->database();
     }
-    
+
     /**
      * 查询单条记录
-     *
-     * @param array  $where
-     * @param string $fields
-     *
-     * PS : 可根据业务场景扩展
      */
-    public function get_one($where, $fields='*')
+    public function get_one($where, $fields='*', $table_name)
     {
-        return $this->db->select($fields)->where($where)->get($this->_tablename)->row_array();
+        if(empty($table_name)){
+            return false;
+        }
+        return $this->db->select($fields)->where($where)->get($table_name)->row_array();
     }
-    
     /**
-     * 新增
-     *
-     * @param array $data	新增数据
-     *
-     * @return int $res     返回成功插入记录对应的ID
+     * 新增一条数据
      */
-    public function add($data)
+    public function add($data, $table_name)
     {
-        $this->db->insert($this->_tablename, $data);
+        if(empty($table_name)){
+            return false;
+        }
+        $this->db->insert($table_name, $data);
         return $this->db->insert_id();
     }
-    
-    /**
-     * 批量新增
-     *
-     * @param array $data	新增数据
-     *
-     * @return int $res     Number of rows inserted or FALSE on failure
-     */
-    public function add_batch($data)
-    {
-        return $this->db->insert_batch($this->_tablename, $data);
-    }
-    
     /**
      * 更新
-     *
-     * @param array $data   更新字段
-     * @param array $where  判定条件
      */
-    public function update($data, $where)
+    public function update($data, $where, $table_name)
     {
-        return $this->db->update($this->_tablename, $data, $where);
+        if(empty($table_name)){
+            return false;
+        }
+        return $this->db->update($table_name, $data, $where);
     }
-    
     /**
-     * 删除方法简化
+     * 删除
      */
-    public function delete($where){
-        if (!empty($where)) {
-            return $this->db->delete($this->_tablename,$where);            
+    public function delete($where, $table_name){
+        if (!empty($where) && !empty($table_name)) {
+            return $this->db->delete($table_name, $where);
         }
         return false;
     }
-    
     /**
      * 获取列表
-     *
-     * @param array  $where
-     * @param string $fields
-     * @param int 	 $limit
-     * @param int 	 $offset
-     * @return array
      */
-    public function get_list($where=NULL, $fields='*',$limit=NULL, $offset=NULL, $order=NULL, $group=NUll)
+    public function get_list($where = '', $fields = '*', $table_name, $order = '')
     {
+        if(empty($table_name)){
+            return false;
+        }
         $this->db->select($fields);
         if(!empty($where)){
             $this->db->where($where);
@@ -92,14 +67,9 @@ class Base_model extends CI_Model
         if(!empty($order)){
             $this->db->order_by($order);
         }
-        if(!empty($group)){
-            $this->db->group_by($group);
-        }
-    
-        $query = $this->db->get($this->_tablename, $limit, $offset);
+        $query = $this->db->get($table_name);
         return $query->result_array();
     }
-    
     /**
      * 公用方法 联查
      *

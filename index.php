@@ -53,8 +53,8 @@
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
-//define('ENVIRONMENT', $_SERVER['HTTP_HOST']==='work.lnctime.com' ? 'production' : 'testing');
-define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');//修改host，根据域名来判断是不是正式环境
+define('ENVIRONMENT', $_SERVER['HTTP_HOST']==='work.lnctime.com' ? 'production' : 'testing');
+//define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');//修改host，根据域名来判断是不是正式环境
 
 /*
  *---------------------------------------------------------------
