@@ -54,6 +54,7 @@
 <!-- ace scripts -->
 <script src="/static/admin/assets/js/ace-elements.min.js"></script>
 <script src="/static/admin/assets/js/ace.min.js"></script>
+<script src="/static/common/common.js"></script>
 
 <!-- inline scripts related to this page -->
 <script type="text/javascript">

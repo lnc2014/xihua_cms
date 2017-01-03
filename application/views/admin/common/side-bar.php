@@ -61,8 +61,22 @@
             </a>
             <b class="arrow"></b>
             <ul class="submenu">
-                <li <?php if($active_second == 'post_list'){ echo 'class="active"'; } ?>>
-                    <a href="/index.php/admin/post/post_list">
+                <li <?php if($active_second == 'cate_index'){ echo 'class="active"'; } ?>>
+                    <a href="/index.php/admin/post/cate_list">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        文章分类列表
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+                <li <?php if($active_second == 'add_cate'){ echo 'class="active"'; } ?>>
+                    <a href="/index.php/admin/post/add_post_cate">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        增加文章分类列表
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+                <li <?php if($active_second == 'post_index'){ echo 'class="active"'; } ?>>
+                    <a href="/index.php/admin/post/index">
                         <i class="menu-icon fa fa-caret-right"></i>
                         文章列表
                     </a>

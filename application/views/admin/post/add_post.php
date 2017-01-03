@@ -11,6 +11,7 @@
 $this->load->view("admin/common/header");
 $this->load->view("admin/common/nav-bar");
 ?>
+<link href="/static/admin/webuploader/css/webuploader.css" rel="stylesheet" type="text/css" />
 <div class="main-container" id="main-container">
     <script type="text/javascript">
         try{ace.settings.check('main-container' , 'fixed')}catch(e){}
@@ -39,41 +40,58 @@ $this->load->view("admin/common/side-bar", array(
                     <!-- PAGE CONTENT BEGINS -->
                     <form class="form-horizontal" role="form">
                         <!-- #section:elements.form -->
-                        <div class="form-group">
+                        <input type="hidden" value="<?php echo $post['id']; ?>" id="post_id">
+                        <div class="form-group error_title">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1">文章标题</label>
+                            <div class="col-sm-9 error_title2">
+                                <input type="text" value="<?php echo $post['post_title']; ?>" id="form-field-1" placeholder="文章标题" class="col-xs-10 col-sm-5 post_title">
+                            </div>
+                        </div>
+                        <div class="form-group error_title">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">文章作者</label>
+                            <div class="col-sm-9 error_title2">
+                                <input type="text" value="<?php echo $post['post_author']; ?>" id="form-field-1" placeholder="文章作者" class="col-xs-10 col-sm-5 post_author">
+                            </div>
+                        </div>
+                        <input id="post_pic_data" type="hidden">
+                        <div class="form-group error_title">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">文章封面</label>
                             <div class="col-sm-9">
-                                <input type="text" id="form-field-1 post_title" placeholder="文章标题" class="col-xs-10 col-sm-5">
+                               <div id="post_pic">上传封面</div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1">文章简介</label>
                             <div class="col-sm-9">
-                                <textarea class="form-control limited" id="form-field-9 post_intro" style="margin: 0px -0.34375px 0px 0px; height: 80px; width: 516px;"></textarea>
+                                <textarea class="form-control limited post_intro" id="form-field-9" style="margin: 0px -0.34375px 0px 0px; height: 80px; width: 516px;"><?php echo $post['post_intro']; ?></textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1">文章所属分类</label>
                             <div class="col-sm-3">
-                                <select class="form-control" id="form-field-select-1">
-                                    <option value=""></option>
-                                    <option value="AL">作品</option>
-                                    <option value="WI">新闻</option>
-                                    <option value="WY">哈哈</option>
+                                <select class="form-control post_cate" id="form-field-select-1">
+                                    <?php
+                                    if(!empty($post_cate)){
+                                        foreach($post_cate as $value){ ?>
+                                            <option value="<?php echo $value['id']?>"><?php echo $value['cat_name']?></option>
+                                        <?php }
+                                    }
+                                    ?>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1">文章内容</label>
                             <div class="col-sm-9">
-                                <script id="editor" type="text/plain" style="width:1024px;height:500px;"></script>
+                                <script id="editor" type="text/plain" style="width:1024px;height:500px;"><?php echo $post['post_content']; ?></script>
                             </div>
                         </div>
                         <div class="form-group">
+                            <input  id="recommend_val" type="hidden" value="0">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1">是否置顶</label>
-                            <div class="col-sm-9">
+                            <div class="col-xs-3">
                                 <label>
-                                    <input name="switch-field-1"  class="ace ace-switch ace-switch-5" type="checkbox">
-                                    <input  id="recommend_val" type="hidden" value="0">
+                                    <input name="switch-field-1" class="ace ace-switch ace-switch-5" type="checkbox">
                                     <span class="lbl" id="recommend"></span>
                                 </label>
                             </div>
@@ -223,11 +241,124 @@ $this->load->view("admin/common/side-bar", array(
 //加载公共底部文件
 $this->load->view("admin/common/footer");
 ?>
+<script type="text/javascript" charset="utf-8" src="/static/admin/webuploader/js/webuploader.min.js"> </script>
 <script>
     $('#recommend').click(function(){
-        var
-
-        console.log(recommend);
+        var recommend_val = $("#recommend_val").val();
+        console.log(recommend_val);
+        if(recommend_val == 0){
+            $("#recommend_val").val(1);
+        }else{
+            $("#recommend_val").val(0);
+        }
     });
+    $("#save").click(function(){
+        var post_title = $('.post_title').val();
+        var post_id = $('#post_id').val();
+        var post_intro = $('.post_intro').val();
+        var post_cate = $('.post_cate').val();
+        var post_author = $('.post_author').val();
+        var recommend_val = $('#recommend_val').val();
+        var post_pic_data = $('#post_pic_data').val();
+        var post_content = UE.getEditor('editor').getContent();
+        if(!post_title){
+            alert('文章标题不能为空');
+            return;
+        }
+        if(!post_intro){
+            alert('文章简介不能为空');
+            return;
+        }
+        if(!post_cate){
+            alert('文章分类不能为空');
+            return;
+        }
+        if(!post_content){
+            alert('文章内容不能为空');
+            return;
+        }
+        if(!post_pic_data){
+            alert('文章封面不能为空');
+            return;
+        }
+        var data =  {
+            post_title:post_title,
+            post_content:post_content,
+            post_intro:post_intro,
+            cat_id:post_cate,
+            post_pic:post_pic_data,
+            post_author:post_author,
+            post_id:post_id,
+            recommend:recommend_val
+        };
+        var success_msg = '添加成功';
+        if(post_id > 0){
+            success_msg = '更新成功';
+        }
+        ajax_submit('/index.php/admin/post/add_post_by_ajax', data, '/index.php/admin/post/index', success_msg);
+    });
+    var image = ['image/gif', 'image/jpg', 'image/jpeg', 'image/bmp', 'image/png'];
+    upload('#post_pic', 'post_pic');
+    /**
+     * 上传函数
+     */
+    function upload(id, id_name){
+        var uploader;
+        // 初始化Web Uploader
+        uploader = WebUploader.create({
+            // 自动上传。
+            auto: true,
+            // swf文件路径
+            swf: 'Uploader.swf',
+            // 文件接收服务端。
+            server: '/index.php/admin/home/upload',
+            // 选择文件的按钮。可选。
+            // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+            pick: id
+            // 只允许选择文件，可选。
+        });
 
+        // 当有文件被添加进队列的时候
+        uploader.on( 'fileQueued', function() {
+            $(id).html('正在上传...');
+        });
+        // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+        uploader.on( 'uploadSuccess', function(file, data ) {
+            if(data.result == '0000'){
+                alert('上传成功！');
+                $('#'+id_name+'_data').val(data.data.path2);
+                $('#'+id_name+'_url').addClass('none');
+                var second = '<button id="second'+id_name+'" class="btn_primary">重新上传</button>';
+                $(id).html(second);
+                var html = '<a target="_blank" style="margin-left: 20px" href='+data.data.path+ '>点击预览</a>';
+                $(id).after().append(html);
+                $('#second'+id_name).click(function(){
+                    $(id).html('重新上传');
+                    $('#'+id_name+'_data').val('');//将已经上传成功的文件置空
+                    upload(id, id_name);
+                });
+            }else{
+                alert('上传失败');
+                $(id).html('上传失败');
+                var second = '<button id="second'+id_name+'" class="btn_primary">重新上传</button>';
+                $(id).html(second);
+                $('#second'+id_name).click(function(){
+                    $(id).html('重新上传');
+                    $('#'+id_name+'_data').val('');//将已经上传成功的文件置空
+                    upload(id, id_name);
+                });
+            }
+        });
+        // 文件上传失败，现实上传出错。
+        uploader.on( 'uploadError', function( file, data) {
+            $(id).html('上传失败');
+        });
+        uploader.on( 'uploadProgress', function() {
+            $(id).html('正在上传...');
+        });
+
+        $(id).click(function(){
+            //uploader.upload(id);
+        });
+    }
 </script>

@@ -1,5 +1,9 @@
 <?php
 /**
+ * 上传类
+ */
+
+/**
  *  PHP通用文件上传类
  *
  *  支持单文件和多文件上传
@@ -9,7 +13,7 @@ class Upload_image{
 
     //要配置的内容
     private $path;
-    private $allowtype = array('jpg', 'gif', 'png', 'jpeg', 'bmp', 'txt', 'doc', 'ppt', 'xls', 'docx', 'xlsx', 'zip');
+    private $allowtype = array('jpg', 'gif', 'png', 'jpeg', 'bmp', 'txt', 'doc', 'ppt', 'xls', 'docx');
     private $maxsize = 1000000;
     private $israndname = true;
 
@@ -23,8 +27,7 @@ class Upload_image{
 
     public function __construct()
     {
-        $this->path = FCPATH."upload/".date('Ymd').'/';
-//        $this->path = "upload/".date('Ymd').'/';
+        $this->path = "upload/".date('Ymd').'/';
     }
 
     /**
@@ -48,6 +51,7 @@ class Upload_image{
      * @param $fileField    上传文件的表单名称
      */
     function upload($fileField){
+        $return = true;
         if (!$this->checkFilePath()){
             $this->errorMess = $this->getError();
             return false;
@@ -57,7 +61,6 @@ class Upload_image{
         $tmp_name = $_FILES[$fileField]['tmp_name'];
         $size = $_FILES[$fileField]['size'];
         $error = $_FILES[$fileField]['error'];
-
         //设置文件信息
         if ($this->setFiles($name, $tmp_name, $size, $error)) {
             if ($this->checkFileSize() && $this->checkFileType()) {
