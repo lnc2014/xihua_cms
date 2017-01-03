@@ -91,10 +91,10 @@
                 </li>
             </ul>
         </li>
-        <li class="">
-            <a href="widgets.html">
+        <li <?php if($active == 'comment'){ echo 'class="active"'; } ?>>
+            <a href="/index.php/admin/post/comment">
                 <i class="menu-icon fa fa-list-alt"></i>
-                <span class="menu-text">用户管理</span>
+                <span class="menu-text">评论管理</span>
             </a>
             <b class="arrow"></b>
         </li>

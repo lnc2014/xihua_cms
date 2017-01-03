@@ -18,8 +18,7 @@ $this->load->view("admin/common/nav-bar");
 <?php
 //菜单栏，权限主要控制
 $this->load->view("admin/common/side-bar", array(
-    'active' => 'post',
-    'active_second' => 'post_index',
+    'active' => 'comment'
 ));
 ?>
     <div class="main-content">
@@ -28,12 +27,6 @@ $this->load->view("admin/common/side-bar", array(
         $this->load->view("admin/common/bread-crumbs");
         ?>
         <div class="page-content">
-            <div class="page-header">
-                <a class="btn btn-lg btn-success" href="/index.php/admin/post/add_post">
-                    <i class="ace-icon fa fa-check"></i>
-                    新增文章
-                </a>
-            </div>
             <div class="row">
                 <div class="col-xs-12">
                     <!-- PAGE CONTENT BEGINS -->
@@ -42,36 +35,46 @@ $this->load->view("admin/common/side-bar", array(
                             <table id="sample-table-1" class="table table-striped table-bordered table-hover">
                                 <thead>
                                 <tr>
-                                    <th>文章ID</th>
-                                    <th>文章标题</th>
-                                    <th class="hidden-480">文章作者</th>
-                                    <th class="hidden-480">文章简介</th>
-                                    <th>
-                                        <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
-                                        文章阅读次数
-                                    </th>
+                                    <th>评论ID</th>
+                                    <th>评论文章标题</th>
+                                    <th class="hidden-480">评论者姓名</th>
+                                    <th class="hidden-480">评论者邮箱</th>
+                                    <th class="hidden-480">评论内容</th>
+                                    <th class="hidden-480">评论时间</th>
+                                    <th class="hidden-480">评论状态</th>
                                     <th>操作</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php
-                                if(!empty($posts)){
-                                    foreach($posts as $value){ ?>
+                                if(!empty($comments)){
+                                    foreach($comments as $value){ ?>
                                         <tr>
                                             <td>
                                                 <a href="#"><?php echo $value['id']?></a>
                                             </td>
                                             <td><?php echo $value['post_title']?></td>
-                                            <td class="hidden-480"><?php echo $value['post_author']?></td>
-                                            <td class="hidden-480"><?php echo $value['post_intro']?></td>
-                                            <td><?php echo $value['read_time']?></td>
+                                            <td class="hidden-480"><?php echo $value['name']?></td>
+                                            <td class="hidden-480"><?php echo $value['email']?></td>
+                                            <td><?php echo $value['comment']?></td>
+                                            <td><?php echo $value['create_time']?></td>
+                                            <td><?php
+                                                if($value['status'] == 0){ ?>
+                                                    <td class="hidden-480">
+													<span class="label label-sm label-warning">待审核</span>
+                                                <?php }elseif($value['status'] == 1){ ?>
+                                                    <span class="label label-sm label-success">通过审核</span>
+                                                    <?php }else{?>
+                                                    <span class="label label-sm label-error arrowed-in">不通过审核</span>
+                                                    <?php } ?>
+                                                    </td>
                                             <td>
                                                 <div class="hidden-sm hidden-xs btn-group">
-                                                    <a class="btn btn-xs btn-info" href="/index.php/admin/post/add_post/<?php echo $value['id'];?>">
-                                                        <i class="ace-icon fa fa-pencil bigger-120"></i>
-                                                    </a>
-                                                    <button class="btn btn-xs btn-danger" onclick="del(<?php echo $value['id'] ?>)">
-                                                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                                    <button class="btn btn-xs btn-info" onclick="pass(<?php echo $value['id']; ?>, 1)" >
+                                                        通过审核
+                                                    </button>
+                                                    <button class="btn btn-xs btn-danger" onclick="pass(<?php echo $value['id']; ?>, 2)">
+                                                        不通过审核
                                                     </button>
                                                 </div>
 
@@ -80,7 +83,7 @@ $this->load->view("admin/common/side-bar", array(
                                     <?php }
                                     ?>
                                 <?php }else{
-                                    echo '暂无文章';
+                                    echo '暂无评论';
                                 }
                                 ?>
                                 </tbody>
@@ -91,7 +94,7 @@ $this->load->view("admin/common/side-bar", array(
                                 'all_record' => $all_record,
                                 'page' => $current_page,
                                 'pages' => $all_pages,
-                                'url' => '/index.php/admin/post/index'
+                                'url' => '/index.php/admin/post/comment'
                             ));
                             ?>
                         </div><!-- /.span -->
@@ -111,13 +114,13 @@ $this->load->view("admin/common/side-bar", array(
 $this->load->view("admin/common/footer");
 ?>
 <script>
-    function del($post_id){
-        if(confirm('删除之后将不可恢复！')){
+    function pass(id, status){
+        if(confirm('审核之后将不可恢复！')){
             var data =  {
-                id:$post_id,
-                table_name:'xihua_post'
+                id:id,
+                status:status
             };
-            ajax_submit('/index.php/admin/post/delete', data, '/index.php/admin/post/index', '删除成功');
+            ajax_submit('/index.php/admin/post/check_comment', data, '/index.php/admin/post/comment', '审核成功');
         }
     }
 </script>

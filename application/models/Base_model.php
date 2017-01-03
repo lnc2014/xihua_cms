@@ -55,7 +55,7 @@ class Base_model extends CI_Model
     /**
      * 获取列表
      */
-    public function get_list($where = '', $fields = '*', $table_name, $order = '')
+    public function get_list($where = '', $fields = '*', $table_name, $order = '', $limit = NULL, $offset = NULL)
     {
         if(empty($table_name)){
             return false;
@@ -67,6 +67,7 @@ class Base_model extends CI_Model
         if(!empty($order)){
             $this->db->order_by($order);
         }
+        $this->db->limit($limit, $offset);
         $query = $this->db->get($table_name);
         return $query->result_array();
     }
@@ -87,11 +88,9 @@ class Base_model extends CI_Model
      * @param $alias 为主表设置别名
      * @return array
      */
-    public function get_list_by_join($where=NULL, $fields='*',$limit=NULL, $offset=NULL, $join = NULL, $order=NULL, $group=NUll, $alias=NULL)
+    public function get_list_by_join($where=NULL, $fields='*', $table, $limit = NULL, $offset = NULL, $join = NULL, $order = NULL, $group=NUll, $alias=NULL)
     {
         $this->db->select($fields);
-        $table = $this->_tablename;
-    
         if(!empty($where)){
             $this->db->where($where);
         }
