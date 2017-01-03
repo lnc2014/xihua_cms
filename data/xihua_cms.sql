@@ -29,9 +29,33 @@ CREATE TABLE `xihua_admin` (
   `last_login_time` timestamp NULL DEFAULT NULL COMMENT '最近登录时间',
   `last_ip` varchar(250) DEFAULT NULL COMMENT '最后登录的IP',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 /*Data for the table `xihua_admin` */
+
+insert  into `xihua_admin`(`id`,`user_name`,`psw`,`auth`,`flag`,`last_login_time`,`last_ip`) values (1,'admin','21232f297a57a5a743894a0e4a801fc3','',1,'2016-12-31 14:35:02',NULL);
+
+/*Table structure for table `xihua_comment` */
+
+DROP TABLE IF EXISTS `xihua_comment`;
+
+CREATE TABLE `xihua_comment` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `post_id` int(11) NOT NULL DEFAULT '0' COMMENT '文章ID',
+  `name` varchar(250) NOT NULL DEFAULT '' COMMENT '姓名',
+  `email` varchar(100) NOT NULL DEFAULT '' COMMENT 'email',
+  `comment` varchar(500) NOT NULL DEFAULT '' COMMENT '评论',
+  `create_time` timestamp NULL DEFAULT NULL,
+  `update_time` timestamp NULL DEFAULT NULL,
+  `flag` tinyint(4) NOT NULL DEFAULT '1' COMMENT '是否有效',
+  `status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '评论状态，1为审核通过，0为待审核，2为不通过审核',
+  `type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '1为评论，2为留言',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+/*Data for the table `xihua_comment` */
+
+insert  into `xihua_comment`(`id`,`post_id`,`name`,`email`,`comment`,`create_time`,`update_time`,`flag`,`status`,`type`) values (1,1,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(2,1,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(3,1,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(4,1,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(5,5,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(6,6,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(7,1,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(8,0,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1);
 
 /*Table structure for table `xihua_post` */
 
@@ -47,13 +71,16 @@ CREATE TABLE `xihua_post` (
   `post_pic` varchar(250) NOT NULL DEFAULT '' COMMENT '文章封面图片地址',
   `recommend` tinyint(4) NOT NULL DEFAULT '0' COMMENT '是否被推荐',
   `read_time` int(11) DEFAULT '0' COMMENT '阅读次数',
+  `comment` int(11) NOT NULL DEFAULT '0' COMMENT '评论次数',
   `create_time` timestamp NULL DEFAULT NULL,
   `update_time` timestamp NULL DEFAULT NULL,
   `flag` tinyint(1) DEFAULT NULL COMMENT '是否有效',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 /*Data for the table `xihua_post` */
+
+insert  into `xihua_post`(`id`,`cat_id`,`post_title`,`post_author`,`post_content`,`post_intro`,`post_pic`,`recommend`,`read_time`,`comment`,`create_time`,`update_time`,`flag`) values (1,1,'文章测试','李农成','<p>三地三地艾斯德斯大</p>','文章简介测试                                                                ','upload/20170104/20170104005128_545.jpg',0,0,0,'2017-01-02 15:41:35','2017-01-04 00:51:31',1),(5,1,'董小姐','李农成','<h1>             个哈哈</h1>','研究是','upload/20170104/20170104005100_514.jpg',0,0,0,'2017-01-02 16:59:31','2017-01-04 00:51:09',1),(6,1,'杨姣是个大美女','杨姣','<p>nice to meet u</p>','杨姣是个傻逼','upload/20170104/20170104001430_606.jpg',0,0,0,'2017-01-02 21:51:30','2017-01-04 00:14:33',1),(7,1,'李农成','李农成','<p>李农成是个大帅哥<br></p>','李农成是个大帅哥','upload/20170102/20170102215540_566.jpg',0,0,0,'2017-01-02 21:55:52','2017-01-02 21:55:52',1),(8,3,'内画是个啥','袁腾','<p>家居 摸到家啦 </p>','内画是个大的作品啥的','upload/20170104/20170104010449_675.png',1,24,0,'2017-01-04 01:05:16','2017-01-04 01:05:16',1);
 
 /*Table structure for table `xihua_post_cat` */
 
@@ -67,9 +94,11 @@ CREATE TABLE `xihua_post_cat` (
   `update_time` timestamp NULL DEFAULT NULL COMMENT '更新时间',
   `flag` tinyint(4) DEFAULT '1' COMMENT '是否有效',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 /*Data for the table `xihua_post_cat` */
+
+insert  into `xihua_post_cat`(`id`,`cat_name`,`cat_intro`,`create_time`,`update_time`,`flag`) values (1,'新闻动态','讲述新闻动态2','2017-01-02 16:37:13','2017-01-02 16:38:41',1),(3,'与昂及','数据的看见','2017-01-02 16:56:41','2017-01-02 16:56:41',1);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
