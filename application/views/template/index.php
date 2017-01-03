@@ -83,26 +83,31 @@
         <div class="about-main">
             <div class="col-md-8 about-left">
                 <div class="about-tre">
-                    <?php
-                    foreach($post as $value){ ?>
                         <div class="a-1">
-                            <div class="col-md-6 abt-left">
-                                <a href="/index.php/web/post_detail/<?php echo $value['id']; ?>"><img src="/static/template/images/c-3.jpg" alt="" /></a>
-                                <h6>Find The Most</h6>
-                                <h3><a href="single.html">Tasty Coffee</a></h3>
-                                <p>Vivamus interdum diam diam, non faucibus tortor consequat vitae. Proin sit amet augue sed massa pellentesque viverra. Suspendisse iaculis purus eget est pretium aliquam ut sed diam.</p>
-                                <label>May 29, 2015</label>
-                            </div>
-                            <div class="col-md-6 abt-left">
-                                <a href="single.html"><img src="/static/template/images/c-4.jpg" alt="" /></a>
-                                <h6>Find The Most</h6>
-                                <h3><a href="single.html">Tasty Coffee</a></h3>
-                                <p>Vivamus interdum diam diam, non faucibus tortor consequat vitae. Proin sit amet augue sed massa pellentesque viverra. Suspendisse iaculis purus eget est pretium aliquam ut sed diam.</p>
-                                <label>May 29, 2015</label>
-                            </div>
-                            <div class="clearfix"></div>
+                            <?php
+                            for($i = 0; $i<count($all_posts); $i++){ ?>
+                                <?php
+                                if($i%2 == 0){ ?>
+                                    <div class="col-md-6 abt-left">
+                                        <a href="/index.php/web/post_detail/<?php echo $all_posts[$i]['id']; ?>"><img src="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/'.$all_posts[$i]['post_pic']?>" alt="" /></a>
+                                        <h3><a href="/index.php/web/post_detail/<?php echo $all_posts[$i]['id']; ?>"><?php echo $all_posts[$i]['post_title'];?></a></h3>
+                                        <p><?php echo $all_posts[$i]['post_intro'];?></p>
+                                        <label><?php echo $all_posts[$i]['create_time'];?></label>
+                                    </div>
+                                    <?php
+                                    if(!empty($all_posts[$i+1])){ ?>
+                                    <div class="col-md-6 abt-left">
+                                        <a href="/index.php/web/post_detail/<?php echo $all_posts[$i+1]['id']; ?>"><img src="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/'.$all_posts[$i+1]['post_pic']?>" alt="" /></a>
+                                        <h3><a href="/index.php/web/post_detail/<?php echo $all_posts[$i+1]['id']; ?>"><?php echo $all_posts[$i+1]['post_title'];?></a></h3>
+                                        <p><?php echo $all_posts[$i+1]['post_intro'];?></p>
+                                        <label><?php echo $all_posts[$i+1]['create_time'];?></label>
+                                    </div>
+                                        <?php }?>
+                                    <div class="clearfix"></div>
+                                <?php }
+                            }
+                            ?>
                         </div>
-                    <?php } ?>
                 </div>
                 <div class="banner-btn">
                     <a href="single.html">Read More</a>
@@ -111,47 +116,33 @@
             <div class="col-md-4 about-right heading">
                 <div class="abt-2">
                     <h3>热门新闻</h3>
-                    <div class="might-grid">
-                        <div class="grid-might">
-                            <a href="single.html"><img src="images/c-12.jpg" class="img-responsive" alt=""> </a>
+                    <?php
+                    foreach($all_posts_read as $read){ ?>
+                        <div class="might-grid">
+                            <div class="grid-might">
+                                <a href="/index.php/web/post_detail/<?php echo $read['id']?>">
+                                    <img src="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/'.$read['post_pic']?>" class="img-responsive" alt="">
+                                </a>
+                            </div>
+                            <div class="might-top">
+                                <h4><a href="/index.php/web/post_detail/<?php echo $read['id']?>"><?php echo $read['post_title'];?></a></h4>
+                                <p><?php echo $read['post_intro'];?></p>
+                            </div>
+                            <div class="clearfix"></div>
                         </div>
-                        <div class="might-top">
-                            <h4><a href="single.html">Duis consectetur gravida</a></h4>
-                            <p>Nullam non magna lobortis, faucibus erat eu, consequat justo. Suspendisse commodo nibh odio.</p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="might-grid">
-                        <div class="grid-might">
-                            <a href="single.html"><img src="images/c-10.jpg" class="img-responsive" alt=""> </a>
-                        </div>
-                        <div class="might-top">
-                            <h4><a href="single.html">Duis consectetur gravida</a></h4>
-                            <p> Nullam non magna lobortis, faucibus erat eu, consequat justo. Suspendisse commodo nibh odio.</p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="might-grid">
-                        <div class="grid-might">
-                            <a href="single.html"><img src="images/c-11.jpg" class="img-responsive" alt=""> </a>
-                        </div>
-                        <div class="might-top">
-                            <h4><a href="single.html">Duis consectetur gravida</a></h4>
-                            <p> Nullam non magna lobortis, faucibus erat eu, consequat justo. Suspendisse commodo nibh odio.</p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
+                    <?php }
+                    ?>
                 </div>
                 <div class="abt-2">
                     <h3>评论最多</h3>
                     <ul>
-                        <li><a href="single.html">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a></li>
-                        <li><a href="single.html">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</a></li>
-                        <li><a href="single.html">When an unknown printer took a galley of type and scrambled it to make a type specimen book. </a> </li>
-                        <li><a href="single.html">It has survived not only five centuries, but also the leap into electronic typesetting</a> </li>
-                        <li><a href="single.html">Remaining essentially unchanged. It was popularised in the 1960s with the release of </a> </li>
-                        <li><a href="single.html">Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing </a> </li>
-                        <li><a href="single.html">Software like Aldus PageMaker including versionsof Lorem Ipsum.</a> </li>
+                        <?php
+                        foreach($all_posts_comment as $comment){ ?>
+                        <li><a href="/index.php/web/post_detail/<?php echo $comment['id']?>">
+                                <?php echo $comment['post_title'];?>
+                            </a></li>
+                        <?php }?>
+
                     </ul>
                 </div>
             </div>
@@ -247,7 +238,7 @@
 <div class="footer">
     <div class="container">
         <div class="footer-text">
-            <p>Copyright &copy; 2015.Company name All rights reserved.More Templates  - Collect from</p>
+            <p>Copyright &copy; 2015.溪话工作室 All rights reserved.</p>
         </div>
     </div>
 </div>
