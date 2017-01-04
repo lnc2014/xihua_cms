@@ -65,39 +65,39 @@
 </script>
 <!-- script-for-menu -->
 <!--banner-starts-->
-<div class="banner">
-    <div class="container">
-        <div id="myCarousel" class="carousel slide">
-            <!-- 轮播（Carousel）指标 -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-            <!-- 轮播（Carousel）项目 -->
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img src="http://www.runoob.com/wp-content/uploads/2014/07/slide1.png" alt="First slide">
+<?php
+if(!empty($banner)){ ?>
+    <div class="banner">
+        <div class="container">
+            <div id="myCarousel" class="carousel slide">
+                <!-- 轮播（Carousel）指标 -->
+                <ol class="carousel-indicators">
+                    <?php
+                    foreach($banner as $k=>$item1){ ?>
+                        <li data-target="#myCarousel" data-slide-to="<?php echo $k;?>" <?php if($k == 0){ echo 'class="active"';}?>></li>
+                    <?php  }
+                    ?>
+                </ol>
+                <!-- 轮播（Carousel）项目 -->
+                <div class="carousel-inner">
+                    <?php
+                    foreach($banner as $k => $item){ ?>
+                        <div class="item <?php if($k == 0){ echo 'active';}?>">
+                            <img src="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/'.$item['banner']; ?>" alt="<?php echo $item['title']; ?>">
+                        </div>
+                   <?php  }
+                    ?>
                 </div>
-                <div class="item">
-                    <img src="/static/template/images/banner.jpg" alt="Second slide">
-                </div>
-                <div class="item">
-                    <img src="/static/template/images/banner.jpg" alt="Third slide">
-                </div>
+                <!-- 轮播（Carousel）导航 -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;
+                </a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;
+                </a>
             </div>
-            <!-- 轮播（Carousel）导航 -->
-            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;
-            </a>
-            <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;
-            </a>
         </div>
     </div>
-</div>
-<div class="banner">
-
-</div>
-
+<?php }
+?>
 <!--about-starts-->
 <div class="about">
     <div class="container">
