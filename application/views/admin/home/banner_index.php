@@ -47,6 +47,7 @@ $this->load->view("admin/common/side-bar", array(
                                     <th class="hidden-480">banner缩略图</th>
                                     <th class="hidden-480">banner上传时间</th>
                                     <th class="hidden-480">是否展示</th>
+                                    <th class="hidden-480">链接测试</th>
                                     <th>操作</th>
                                 </tr>
                                 </thead>
@@ -71,9 +72,12 @@ $this->load->view("admin/common/side-bar", array(
                                                     echo '不展示';
                                                 }
                                                 ?></td>
+                                            <td class="hidden-480">
+                                                <a  href="<?php echo $value['link_url']; ?>" target="_blank"><?php echo $value['link_url']; ?></a>
+                                            </td>
                                             <td>
                                                 <div class="hidden-sm hidden-xs btn-group">
-                                                    <a class="btn btn-xs btn-info" href="/index.php/admin/hoem/add_banner/<?php echo $value['id'];?>">
+                                                    <a class="btn btn-xs btn-info" href="/index.php/admin/home/add_banner/<?php echo $value['id'];?>">
                                                         <i class="ace-icon fa fa-pencil bigger-120"></i>
                                                     </a>
                                                     <button class="btn btn-xs btn-danger" onclick="del(<?php echo $value['id'] ?>)">
@@ -112,9 +116,9 @@ $this->load->view("admin/common/footer");
         if(confirm('删除之后将不可恢复！')){
             var data =  {
                 id:$post_id,
-                table_name:'xihua_post'
+                table_name:'xihua_banner'
             };
-            ajax_submit('/index.php/admin/post/delete', data, '/index.php/admin/post/index', '删除成功');
+            ajax_submit('/index.php/admin/post/delete', data, '/index.php/admin/home/banner', '删除成功');
         }
     }
 </script>

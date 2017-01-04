@@ -59,19 +59,26 @@ $this->load->view("admin/common/side-bar", array(
                                 <small>例如：http://xihua_cms/index.php/web/post_detail/8</small>
                             </div>
                         </div>
-                        <input id="post_pic_data" type="hidden">
+                        <input id="post_pic_data" type="hidden" value="<?php echo $banner['banner']; ?>">
                         <div class="form-group error_title">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1">banner图片</label>
                             <div class="col-sm-9">
-                               <div id="post_pic">上传banner</div><small>建议上传1140*600大小的图片，不然会出现兼容性问题</small>
+                                <?php
+                                if(!empty($banner['banner'])){ ?>
+                                    <div id="post_pic">重新上传</div><a  href="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/'.$banner['banner']; ?>" target="_blank"><img src="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/'.$banner['banner']; ?>" width="100px" height="50px"></a>
+                                <?php }else{
+                                ?>
+                               <div id="post_pic">上传banner</div>
+                                <?php }?>
+                                <small>建议上传1140*600大小的图片，不然会出现兼容性问题</small>
                             </div>
                         </div>
                         <div class="form-group">
-                            <input  id="recommend_val" type="hidden" value="0">
+                            <input  id="recommend_val" type="hidden" value="<?php echo ($banner['is_show'] == 1) ? 1 : 0;?>">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1">是否展示</label>
                             <div class="col-xs-3">
                                 <label>
-                                    <input name="switch-field-1" class="ace ace-switch ace-switch-5" type="checkbox">
+                                    <input name="switch-field-1" class="ace ace-switch ace-switch-5" type="checkbox" <?php echo ($banner['is_show'] == 1) ? 'checked' : '';?>>
                                     <span class="lbl" id="recommend"></span>
                                 </label>
                             </div>

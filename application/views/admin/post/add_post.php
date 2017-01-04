@@ -57,7 +57,13 @@ $this->load->view("admin/common/side-bar", array(
                         <div class="form-group error_title">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1">文章封面</label>
                             <div class="col-sm-9">
-                               <div id="post_pic">上传封面</div>
+                                <?php
+                                if(!empty($post['post_pic'])){ ?>
+                                    <div id="post_pic">重新上传</div><a  href="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/'.$post['post_pic']; ?>" target="_blank"><img src="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/'.$post['post_pic']; ?>" width="100px" height="50px"></a>
+                                <?php }else{
+                                    ?>
+                                    <div id="post_pic">上传封面</div>
+                                <?php }?>
                             </div>
                         </div>
                         <div class="form-group">
@@ -87,11 +93,11 @@ $this->load->view("admin/common/side-bar", array(
                             </div>
                         </div>
                         <div class="form-group">
-                            <input  id="recommend_val" type="hidden" value="0">
+                            <input  id="recommend_val" type="hidden" value="<?php echo ($post['recommend'] == 1) ? 1 : 0;?>">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1">是否置顶</label>
                             <div class="col-xs-3">
                                 <label>
-                                    <input name="switch-field-1" class="ace ace-switch ace-switch-5" type="checkbox">
+                                    <input name="switch-field-1" class="ace ace-switch ace-switch-5" type="checkbox" <?php echo ($post['recommend'] == 1) ? 'checked' : '';?>>
                                     <span class="lbl" id="recommend"></span>
                                 </label>
                             </div>

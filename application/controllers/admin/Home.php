@@ -85,10 +85,15 @@ class Home extends AdminController
     /**
      * 增加banner图片
      */
-    public function add_banner(){
+    public function add_banner($banner_id = ''){
         $this->data['title'] = '后台banner管理首页';
         $this->data['breadcrumb'] = '增加banner图片';
-        $this->load->model('Base_model');
+        if(!empty($banner_id)){
+            $this->load->model('Base_model');
+            $this->data['banner'] = $this->Base_model->get_one(array(
+                'id' => $banner_id
+            ), '*', 'xihua_banner');
+        }
         $this->load->view("admin/home/add_banner", $this->data);
     }
     public function add_banner_by_ajax(){
@@ -102,7 +107,7 @@ class Home extends AdminController
         unset($post['banner_id']);
         if($banner_id > 0){
             $post['update_time'] = date('Y-m-d H:i:s', time());
-            $post_id = $this->Base_model->update($post, array('id' => $banner_id), 'xihua_post_cat');
+            $post_id = $this->Base_model->update($post, array('id' => $banner_id), 'xihua_banner');
             if($post_id > 0){
                 echo $this->apiReturn('0000', new stdClass(), $this->response_msg["0000"]);
                 return;
