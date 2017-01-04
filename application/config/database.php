@@ -77,10 +77,10 @@ if (ENVIRONMENT === 'production') {
 	//线上环境
 	$db['default'] = array(
 			'dsn'	=> '',
-			'hostname' => 'rdsto108hu2s027jw33ipublic.mysql.rds.aliyuncs.com',
-			'username' => 'dudubashi_admin',
-			'password' => 'dudubashiAdmin',
-			'database' => 'dudubashiwx',
+			'hostname' => '222',
+			'username' => '22',
+			'password' => '2',
+			'database' => '2',
 			'dbdriver' => 'mysqli',
 			'dbprefix' => '',
 			'pconnect' => FALSE,

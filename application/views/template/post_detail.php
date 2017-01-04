@@ -38,9 +38,9 @@
             <div class="navigation">
                 <span class="menu"></span>
                 <ul class="navig">
-                    <li><a href="#"  class="active">首页</a></li>
+                    <li><a href="/"  class="active">首页</a></li>
                     <li><a href="#">关于我们</a></li>
-                    <li><a href="#">新闻相册</a></li>
+                    <li><a href="#">新闻中心</a></li>
                     <li><a href="#">联系我们</a></li>
                 </ul>
             </div>

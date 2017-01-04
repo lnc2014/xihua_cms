@@ -13,6 +13,8 @@ class Web extends CI_Controller {
 		$this->data['all_posts'] = $this->Base_model->get_list('', '*', 'xihua_post', 'create_time DESC', 10, 0);//首页所有的文章
 		$this->data['all_posts_read'] = $this->Base_model->get_list('', '*', 'xihua_post', 'read_time DESC', 8, 0);//首页热门文章
 		$this->data['all_posts_comment'] = $this->Base_model->get_list('', '*', 'xihua_post', 'comment DESC', 8, 0);//首页评论最多文章
+		$this->data['banner'] = $this->Base_model->get_list(array('is_show' => 1), '*', 'xihua_banner', 'create_time DESC', 8, 0);//首页评论最多文章
+
 		$this->load->view('template/index', $this->data);
 	}
 	public function post_detail($post_id){

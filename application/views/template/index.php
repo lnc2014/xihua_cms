@@ -32,6 +32,13 @@
     <!--start-smoth-scrolling-->
 </head>
 <body>
+<div class="header-top">
+    <div class="container">
+        <div class="head-main">
+            <a href="index.html"><img src="/static/template/images/logo-1.png" alt=""></a>
+        </div>
+    </div>
+</div>
 <!--start-header-->
 <div class="header">
     <div class="container">
@@ -41,7 +48,7 @@
                 <ul class="navig">
                     <li><a href="/"  class="active">首页</a></li>
                     <li><a href="#">关于我们</a></li>
-                    <li><a href="#">新闻相册</a></li>
+                    <li><a href="#">新闻中心</a></li>
                     <li><a href="#">联系我们</a></li>
                 </ul>
             </div>

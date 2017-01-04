@@ -35,6 +35,26 @@ CREATE TABLE `xihua_admin` (
 
 insert  into `xihua_admin`(`id`,`user_name`,`psw`,`auth`,`flag`,`last_login_time`,`last_ip`) values (1,'admin','21232f297a57a5a743894a0e4a801fc3','',1,'2016-12-31 14:35:02',NULL);
 
+/*Table structure for table `xihua_banner` */
+
+DROP TABLE IF EXISTS `xihua_banner`;
+
+CREATE TABLE `xihua_banner` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL DEFAULT '' COMMENT 'banner标题',
+  `link_url` varchar(250) NOT NULL DEFAULT '' COMMENT 'banner跳转地址',
+  `banner` varchar(250) NOT NULL DEFAULT '' COMMENT 'banner图片地址',
+  `banner_intro` varchar(250) NOT NULL DEFAULT '' COMMENT '图片介绍',
+  `is_show` tinyint(4) NOT NULL DEFAULT '1' COMMENT '是不是展示，1为展示，其他的为不展示',
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+/*Data for the table `xihua_banner` */
+
+insert  into `xihua_banner`(`id`,`title`,`link_url`,`banner`,`banner_intro`,`is_show`,`create_time`,`update_time`) values (2,'banner测试22','http://xihua_cms/index.php/web/post_detail/9','upload/20170104/20170104151346_429.jpg','我就是来测试的333',1,'2017-01-04 15:13:48','2017-01-04 16:02:03'),(3,'测试一号','','upload/20170104/20170104161614_286.jpg','测试',1,'2017-01-04 16:16:18','2017-01-04 16:16:18');
+
 /*Table structure for table `xihua_comment` */
 
 DROP TABLE IF EXISTS `xihua_comment`;
@@ -51,11 +71,11 @@ CREATE TABLE `xihua_comment` (
   `status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '评论状态，1为审核通过，0为待审核，2为不通过审核',
   `type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '1为评论，2为留言',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 /*Data for the table `xihua_comment` */
 
-insert  into `xihua_comment`(`id`,`post_id`,`name`,`email`,`comment`,`create_time`,`update_time`,`flag`,`status`,`type`) values (1,1,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(2,1,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(3,1,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(4,1,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(5,5,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(6,6,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(7,1,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(8,0,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1);
+insert  into `xihua_comment`(`id`,`post_id`,`name`,`email`,`comment`,`create_time`,`update_time`,`flag`,`status`,`type`) values (1,1,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(2,1,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(3,1,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(4,1,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(5,5,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(6,6,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(7,1,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(8,0,'测试','li5nongcheng@126.com','试试评论怎么样','2017-01-03 23:04:29',NULL,1,1,1),(9,6,'3','2@126.com','3','2017-01-04 11:36:46','2017-01-04 11:36:46',1,1,1);
 
 /*Table structure for table `xihua_post` */
 
@@ -80,7 +100,7 @@ CREATE TABLE `xihua_post` (
 
 /*Data for the table `xihua_post` */
 
-insert  into `xihua_post`(`id`,`cat_id`,`post_title`,`post_author`,`post_content`,`post_intro`,`post_pic`,`recommend`,`read_time`,`comment`,`create_time`,`update_time`,`flag`) values (1,1,'文章测试','李农成','<p>三地三地艾斯德斯大</p>','文章简介测试                                                                ','upload/20170104/20170104005128_545.jpg',0,0,0,'2017-01-02 15:41:35','2017-01-04 00:51:31',1),(5,1,'董小姐','李农成','<h1>             个哈哈</h1>','研究是','upload/20170104/20170104005100_514.jpg',0,0,0,'2017-01-02 16:59:31','2017-01-04 00:51:09',1),(6,1,'杨姣是个大美女','杨姣','<p>nice to meet u</p>','杨姣是个傻逼','upload/20170104/20170104001430_606.jpg',0,0,0,'2017-01-02 21:51:30','2017-01-04 00:14:33',1),(7,1,'李农成','李农成','<p>李农成是个大帅哥<br></p>','李农成是个大帅哥','upload/20170102/20170102215540_566.jpg',0,0,0,'2017-01-02 21:55:52','2017-01-02 21:55:52',1),(8,3,'内画是个啥','袁腾','<p>家居 摸到家啦 </p>','内画是个大的作品啥的','upload/20170104/20170104010449_675.png',1,24,0,'2017-01-04 01:05:16','2017-01-04 01:05:16',1);
+insert  into `xihua_post`(`id`,`cat_id`,`post_title`,`post_author`,`post_content`,`post_intro`,`post_pic`,`recommend`,`read_time`,`comment`,`create_time`,`update_time`,`flag`) values (1,1,'文章测试','李农成','<p>三地三地艾斯德斯大</p>','文章简介测试                                                                ','upload/20170104/20170104005128_545.jpg',0,2,0,'2017-01-02 15:41:35','2017-01-04 00:51:31',1),(5,1,'董小姐','李农成','<h1>             个哈哈</h1>','研究是','upload/20170104/20170104005100_514.jpg',0,0,0,'2017-01-02 16:59:31','2017-01-04 00:51:09',1),(6,1,'杨姣是个大美女','杨姣','<p>nice to meet u</p>','杨姣是个傻逼','upload/20170104/20170104001430_606.jpg',0,34,0,'2017-01-02 21:51:30','2017-01-04 00:14:33',1),(7,1,'李农成','李农成','<p>李农成是个大帅哥<br></p>','李农成是个大帅哥','upload/20170102/20170102215540_566.jpg',0,0,0,'2017-01-02 21:55:52','2017-01-02 21:55:52',1),(8,1,'内画是个啥','袁腾','<p>家居 摸到家啦 </p>','内画是个大的作品啥的','upload/20170104/20170104160617_457.jpg',1,26,0,'2017-01-04 01:05:16','2017-01-04 16:06:49',1);
 
 /*Table structure for table `xihua_post_cat` */
 
