@@ -98,7 +98,13 @@
             </a>
             <b class="arrow"></b>
         </li>
-
+        <li <?php if($active == 'banner'){ echo 'class="active"'; } ?>>
+            <a href="/index.php/admin/home/banner">
+                <i class="menu-icon fa fa-picture-o"></i>
+                <span class="menu-text">banner图管理</span>
+            </a>
+            <b class="arrow"></b>
+        </li>
     </ul><!-- /.nav-list -->
 
     <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">

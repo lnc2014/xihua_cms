@@ -20,6 +20,7 @@
     <!---- start-smoth-scrolling---->
     <script type="text/javascript" src="/static/template/js/move-top.js"></script>
     <script type="text/javascript" src="/static/template/js/easing.js"></script>
+    <script type="text/javascript" src="/static/template/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function($) {
             $(".scroll").click(function(event){
@@ -38,7 +39,7 @@
             <div class="navigation">
                 <span class="menu"></span>
                 <ul class="navig">
-                    <li><a href="#"  class="active">首页</a></li>
+                    <li><a href="/"  class="active">首页</a></li>
                     <li><a href="#">关于我们</a></li>
                     <li><a href="#">新闻相册</a></li>
                     <li><a href="#">联系我们</a></li>
@@ -66,17 +67,37 @@
 <!--banner-starts-->
 <div class="banner">
     <div class="container">
-        <div class="banner-top">
-            <div class="banner-text">
-                <h2>Aliquam erat</h2>
-                <h1>Suspendisse potenti</h1>
-                <div class="banner-btn">
-                    <a href="single.html">Read More</a>
+        <div id="myCarousel" class="carousel slide">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="http://www.runoob.com/wp-content/uploads/2014/07/slide1.png" alt="First slide">
+                </div>
+                <div class="item">
+                    <img src="/static/template/images/banner.jpg" alt="Second slide">
+                </div>
+                <div class="item">
+                    <img src="/static/template/images/banner.jpg" alt="Third slide">
                 </div>
             </div>
+            <!-- 轮播（Carousel）导航 -->
+            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;
+            </a>
+            <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;
+            </a>
         </div>
     </div>
 </div>
+<div class="banner">
+
+</div>
+
 <!--about-starts-->
 <div class="about">
     <div class="container">
@@ -110,7 +131,7 @@
                         </div>
                 </div>
                 <div class="banner-btn">
-                    <a href="single.html">Read More</a>
+                    <a href="">Read More</a>
                 </div>
             </div>
             <div class="col-md-4 about-right heading">

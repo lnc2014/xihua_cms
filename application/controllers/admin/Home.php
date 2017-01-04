@@ -72,4 +72,55 @@ class Home extends AdminController
         echo $this->apiReturn('0002', $ret, '上传失败');
         return;
     }
+    /**
+     * banner图管理
+     */
+    public function banner(){
+        $this->data['title'] = '后台banner管理首页';
+        $this->data['breadcrumb'] = '后台banner首页';
+        $this->load->model('Base_model');
+        $this->data['banners'] = $this->Base_model->get_list('', '*', 'xihua_banner');
+        $this->load->view("admin/home/banner_index", $this->data);
+    }
+    /**
+     * 增加banner图片
+     */
+    public function add_banner(){
+        $this->data['title'] = '后台banner管理首页';
+        $this->data['breadcrumb'] = '增加banner图片';
+        $this->load->model('Base_model');
+        $this->load->view("admin/home/add_banner", $this->data);
+    }
+    public function add_banner_by_ajax(){
+        $post = $this->input->post(NULL, true);
+        if(empty($post)){
+            echo $this->apiReturn('0003', new stdClass(), $this->response_msg["0003"]);
+            return;
+        }
+        $this->load->model('Base_model');
+        $banner_id = $post['banner_id'];
+        unset($post['banner_id']);
+        if($banner_id > 0){
+            $post['update_time'] = date('Y-m-d H:i:s', time());
+            $post_id = $this->Base_model->update($post, array('id' => $banner_id), 'xihua_post_cat');
+            if($post_id > 0){
+                echo $this->apiReturn('0000', new stdClass(), $this->response_msg["0000"]);
+                return;
+            }else{
+                echo $this->apiReturn('0002', new stdClass(), $this->response_msg["0002"]);
+                return;
+            }
+        }else{
+            $post['create_time'] = date('Y-m-d H:i:s', time());
+            $post['update_time'] = date('Y-m-d H:i:s', time());
+            $banner_id = $this->Base_model->add($post, 'xihua_banner');
+            if($banner_id > 0){
+                echo $this->apiReturn('0000', new stdClass(), $this->response_msg["0000"]);
+                return;
+            }else{
+                echo $this->apiReturn('0002', new stdClass(), $this->response_msg["0002"]);
+                return;
+            }
+        }
+    }
 }

@@ -60,14 +60,13 @@ $this->load->view("admin/common/side-bar", array(
                                             <td><?php echo $value['create_time']?></td>
                                             <td><?php
                                                 if($value['status'] == 0){ ?>
-                                                    <td class="hidden-480">
 													<span class="label label-sm label-warning">待审核</span>
                                                 <?php }elseif($value['status'] == 1){ ?>
                                                     <span class="label label-sm label-success">通过审核</span>
                                                     <?php }else{?>
                                                     <span class="label label-sm label-error arrowed-in">不通过审核</span>
                                                     <?php } ?>
-                                                    </td>
+                                            </td>
                                             <td>
                                                 <div class="hidden-sm hidden-xs btn-group">
                                                     <button class="btn btn-xs btn-info" onclick="pass(<?php echo $value['id']; ?>, 1)" >

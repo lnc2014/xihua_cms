@@ -25,6 +25,7 @@ class Web extends CI_Controller {
 		}
 		$this->load->model('Base_model');
 		$post = $this->data['post'] = $this->Base_model->get_one(array('id' => $post_id), '*', 'xihua_post');
+		$this->data['comment'] = $this->Base_model->get_list(array('post_id' => $post_id, 'type' => 1, 'status' => 1), '*', 'xihua_comment');
 		if(empty($this->data['post'])){
 			echo "<script>
                         alert('非法请求');
@@ -55,6 +56,45 @@ class Web extends CI_Controller {
 			return $posts;
 		}else{
 			echo $this->apiReturn('0000', $posts, 'success');
+			return;
+		}
+	}
+	public function add_comment(){
+		session_start();
+		if(isset($_SESSION['user_id'])){
+			echo $this->apiReturn('0005', new stdClass(), '你已经提交过评论，请勿重复评论');
+			return;
+		}
+		$post_id = $this->input->post('post_id', true);
+		$name = $this->input->post('name', true);
+		$email = $this->input->post('email', true);
+		$content = $this->input->post('content', true);
+		if(empty($post_id) || empty($name) || empty($email) || empty($content)){
+			echo $this->apiReturn('0003', new stdClass(), '非法参数');
+			return;
+		}
+		$this->load->model('Base_model');
+		$post =  $this->Base_model->get_one(array('id' => $post_id), '*', 'xihua_post');
+
+		if(empty($post)){
+			echo $this->apiReturn('0003', new stdClass(), '非法请求');
+			return;
+		}
+		$comment_id = $this->Base_model->add(array(
+			'post_id' => $post_id,
+			'name' => $name,
+			'email' => $email,
+			'comment' => $content,
+			'flag' => 1,
+			'create_time' => date('Y-m-d H:i:s', time()),
+			'update_time' => date('Y-m-d H:i:s', time()),
+		), 'xihua_comment');
+		if($comment_id > 0){
+			$_SESSION['user_id'] = 'xihua';
+			echo $this->apiReturn('0000', new stdClass(), 'success');
+			return;
+		}else{
+			echo $this->apiReturn('0002', new stdClass(), '服务器错误');
 			return;
 		}
 	}

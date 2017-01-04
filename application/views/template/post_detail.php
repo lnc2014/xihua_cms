@@ -77,37 +77,32 @@
             </div>
             <div class="comments heading">
                 <h3>评论</h3>
-                <div class="media">
-                    <div class="media-body">
-                        <h4 class="media-heading">	Richard Spark</h4>
-                        <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs .  </p>
+                <?php
+                foreach($comment as $item){ ?>
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img src="/static/template/images/si.png" alt="">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading"><?php echo $item['name']; ?></h4>
+                            <p><?php echo $item['comment']; ?></p>
+                        </div>
                     </div>
-                    <div class="media-right">
-                        <a href="#">
-                            <img src="/static/template/images/si.png" alt=""> </a>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#">
-                            <img src="images/si.png" alt="">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Joseph Goh</h4>
-                        <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs .  </p>
-                    </div>
-                </div>
+                <?php }
+                ?>
+
+
             </div>
             <div class="comment-bottom heading">
-                <h3>Leave a Comment</h3>
-                <form>
-                    <input type="text" value="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
-                    <input type="text" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
-                    <input type="text" value="Subject" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
-                    <textarea cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
-                    <input type="submit" value="Send">
-                </form>
+                <h3>留个言了再走吧。</h3>
+                <div style="    width: 70%; margin-top: 3%;">
+                <input type="text" value="姓名" id="name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='姓名';}">
+                <input type="text" value="邮箱" id="email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='邮箱';}">
+                <textarea cols="77" rows="6" id="content" onfocus="this.value='';" onblur="if (this.value == '') {this.value = '评论';}">评论</textarea>
+                <button style="color: #fff; padding: 9px 42px;font-size: 15px;background: #190608;cursor: pointer;font-weight: 500;margin: 20px 0 0 0px;border: none;font-family: 'Lato', sans-serif;outline: none; border-radius: 5px;-webkit-border-radius: 5px" onclick="submit_(<?php echo $post['id']?>)">发送</button>
+                </div>
             </div>
         </div>
     </div>
@@ -120,6 +115,55 @@
         </div>
     </div>
 </div>
+<script>
+    function submit_(post_id){
+        if(!post_id){
+            alert('文章ID不能为空');
+            return;
+        }
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var content = $('#content').val();
+        if(!name || name == '姓名'){
+            alert('姓名不能为空');
+            return;
+        }
+        if(!email || email == '邮箱'){
+            alert('邮箱不能为空');
+            return;
+        }
+        if(!email.match(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/)) {
+            alert('邮箱格式不正确！');
+            return;
+        }
+        if(!content || content == '评论'){
+            alert('评论不能为空');
+            return;
+        }
+        var data =  {
+            post_id:post_id,
+            name:name,
+            email:email,
+            content:content
+        };
+        $.ajax({
+            async:false,
+            type : 'POST',
+            url: '/index.php/web/add_comment',
+            data : data,
+            dataType : 'json',
+            success: function (data)
+            {
+                if (data.result == '0000') {
+                    alert('评论成功，等待管理员审核通过吧！');
+                    location.reload();
+                } else {
+                    alert(data.info);
+                }
+            }
+        });
+    }
+</script>
 <!--footer-end-->
 </body>
 </html>
